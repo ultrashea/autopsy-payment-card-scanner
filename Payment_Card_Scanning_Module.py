@@ -49,7 +49,7 @@ class PaymentCardFileIngestModuleFactory(IngestModuleFactoryAdapter):
         return "Ingest module that scans for possible payment card numbers (credit cards, debit cards, etc)"
 
     def getModuleVersionNumber(self):
-        return "1.0"
+        return "1.1"
 
     # Return true if module wants to get called for each file
     def isFileIngestModuleFactory(self):
@@ -69,8 +69,8 @@ class PaymentCardFileIngestModule(FileIngestModule):
     def startUp(self, context):
         self.filesFound = 0
         # This process tends to report a large number of files with numeric sequences
-        # that are Luhn checksum-valid but are not payment card numbers.  By default,
-        # We only scan text files.  If you want to scan binary files as well, set
+        # that are Luhn checksum-valid but are not payment card numbers if binary files are 
+        # scanned.  By default, we only scan text files.  If you want to scan binary files as well, set
         # self.skipBinaries to 1.  Additionally, numbers in binary files such as 
         # spreadsheet files may not be detected.  A possible solution is to incorporate 
         # parsing code for specific document types.

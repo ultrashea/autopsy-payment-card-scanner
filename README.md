@@ -5,4 +5,4 @@ This Autopsy module will search for possible payment card numbers, and will then
 
 (Note: A successful Luhn checksum validation does not guarantee that a payment card number is in use by a payment card vendor, just that it is potentially valid.  A numeric sequence that does not pass Luhn checksum validation can be assumed to not be a valid payment card number)
 
-Usage: Move the Payment_Card_Scanning_Module.py into the Autopsy Python Module directory, and enable the "Payment Card Scanning Module" ingest module.  Files with Luhn validated payment card numbers will be reported in the Interesting Items section under the heading "Files With Possible Payment Card Numbers".
+Usage: Move the Payment_Card_Scanning_Module.py into the Autopsy Python Module directory, and enable the "Payment Card Scanning Module" ingest module.  Files with Luhn validated payment card numbers will be reported in the Interesting Items section under the heading "Files With Possible Payment Card Numbers".  By default, the module does not scan binary files - scanning of binary files can be enabled by setting the self.skipBinaries variable in the module to 0.
